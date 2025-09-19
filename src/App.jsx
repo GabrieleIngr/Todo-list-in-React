@@ -63,7 +63,7 @@ function UserInput({ newRow }) {
     const myRow = {
       //creation of a new object to pass on
       id: Date.now(),
-      text: inputValue,
+      text: inputValue.slice(0, 30),
       backgroundColor: getRandomColor(),
     };
     newRow(myRow);
@@ -176,7 +176,7 @@ function EditInput({ handleSave, todo }) {
     e.preventDefault();
 
     if (!inputValue.trim()) return;
-    handleSave(inputValue);
+    handleSave(inputValue.slice(0, 30));
   }
 
   return (
